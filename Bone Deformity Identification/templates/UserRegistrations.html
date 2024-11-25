@@ -1,0 +1,136 @@
+
+{%extends 'base.html'%}
+{% load static %}
+{%block contents%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Bone Deformity Identification</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+</head>
+<style>
+    .nav-link{
+        color: black;
+
+    }
+</style>
+<body>
+  <section class="bg-light">
+        <div class="container py-5">
+            <div class="row text-center py-3">
+                <div class="col-lg-6 m-auto">
+
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+<div class="col-12 col-md-4 mb-4">
+</div>
+                <div class="col-12 col-md-4 mb-4" align="center">
+                    <div class="card h-100">
+                         <h2 class="h3" align="center" style="color:white; font-weight:bold;">User Register Form</h2><br>
+                         <form action="{%url 'UserRegisterActions'%}" method="POST"  style="width:100%">
+
+                    {% csrf_token %}
+  <table>
+                        <tr><td></td>
+                            <td>User Name</td>
+                            <td style="color:black">{{form.name}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Login ID</td>
+                            <td style="color:black">{{form.loginid}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Password</td>
+                            <td style="color:black">{{form.password}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Mobile</td>
+                            <td style="color:black">{{form.mobile}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>email</td>
+                            <td style="color:black">{{form.email}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Locality</td>
+                            <td style="color:black">{{form.locality}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>Address</td>
+                            <td style="color:black">{{form.address}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>City</td>
+                            <td style="color:black">{{form.city}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td>State</td>
+                            <td style="color:black">{{form.state}}</td>
+                        </tr>
+                        <tr><td></td>
+                            <td></td>
+                            <td style="color:black">{{form.status}}</td>
+                        </tr>
+ <tr><td></td>
+                            <td></td>
+     <td> <button class="btn btn-block btn-primary text-white py-3 px-5" type="submit">
+                                    Register
+                                </button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group mt-3">
+                                <span  >&nbsp;</span>
+                            </div>
+                            </td>
+                        </tr>
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <font color='red'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+
+                    </table>
+
+                </form>
+                         </div>
+                </div>
+                <div class="col-12 col-md-4 mb-4">
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+{%endblock%}
